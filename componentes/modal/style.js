@@ -9,18 +9,19 @@ const estilo = StyleSheet.create({
       },
     
       innerModalContainer: {
-        backgroundColor: 'black',
+        backdropFilter: "blur(19px)",
+        backgroundColor: 'trasnparent',
         padding: 20,
         borderRadius: 10,
         alignItems: 'center',
+        border:"2px solid white",
         justifyContent: 'center',
-        width: Dimensions.get('window').width * 0.8, 
+        width: Dimensions.get('window').width * 0.6, 
       },
     
       imagemModal: {
-        border: '4px solid white',
-        width: 150,
-        height: 150,
+        width: 300,
+        height: 300,
         borderRadius: 10,
         marginBottom: 10,
       },
@@ -34,12 +35,12 @@ const estilo = StyleSheet.create({
       titulo: {
         fontWeight: "bold",
         color: 'white',
-        fontSize: 30,
+        fontSize: 35,
         marginVertical: 10,
       },
       preco: {
         color: 'white',
-        fontSize: 20,
+        fontSize: 25,
         fontWeight: 'bold',
       },
     
