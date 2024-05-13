@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Text, StyleSheet, View, Image, FlatList, TouchableOpacity, Modal, Dimensions, Button } from "react-native";
+import { Text, StyleSheet, View, FlatList, TouchableOpacity, } from "react-native";
 import Header from "./componentes/header";
 import Card from "./componentes/card";
 import DATA from './data';
@@ -26,7 +26,6 @@ export default function App() {
      <Header />
      <CustomModal modalVisible={modalVisible} closeModal={closeModal} selectedItem={selectedItem}/>
      <View style = {{flex: 1, width: '100%'}}>
-
      <View style={estilo.topLine}></View>
      <View style={estilo.categoriaContainer}> 
        <Text style={estilo.tituloCategoria}>Comidas</Text>
