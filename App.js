@@ -4,6 +4,7 @@ import Header from "./componentes/header";
 import Card from "./componentes/card";
 import DATA from './data';
 import Footer from "./componentes/footer";
+import CustomModal from "./componentes/modal";
 
 export default function App() {
   const [modalVisible, setModalVisible] = useState(false);
@@ -23,25 +24,7 @@ export default function App() {
     <View style={estilo.container}>
 
      <Header />
-     <Modal
-       animationType="slide"
-       transparent={true}
-       visible={modalVisible}
-       onRequestClose={() => closeModal()}
-     >
-       <View style={estilo.modalContainer}>
-         <View style={estilo.innerModalContainer}>
-           <Image style={estilo.imagemModal} source={{uri: selectedItem?.imagem}}/>
-           <Text style={estilo.titulo}>{selectedItem?.titulo}</Text>
-           <Text style={estilo.descricao}>{selectedItem?.descricao}</Text>
-           <Text style={estilo.preco}>{selectedItem?.preco}</Text>
-           <View style={estilo.buttonsContainer}>
-             <Button title="Fechar" onPress={() => closeModal()} />
-             <Button title="Adicionar ao Carrinho"/>
-           </View>
-         </View>
-       </View>
-     </Modal>
+     <CustomModal modalVisible={modalVisible} closeModal={closeModal} selectedItem={selectedItem}/>
      <View style = {{flex: 1, width: '100%'}}>
 
      <View style={estilo.topLine}></View>
@@ -124,52 +107,5 @@ const estilo = StyleSheet.create({
     borderBottomColor: 'white',
   },
 
-  modalContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.8)',
-  },
-
-  innerModalContainer: {
-    backgroundColor: 'black',
-    padding: 20,
-    borderRadius: 10,
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: Dimensions.get('window').width * 0.8, // 80% da largura da tela
-  },
-
-  imagemModal: {
-    width: 150,
-    height: 150,
-    borderRadius: 10,
-    marginBottom: 10,
-  },
-
-  descricao: {
-    fontWeight: "bold",
-    color: 'white',
-    fontSize: 18,
-    marginVertical: 10,
-  },
-
-  titulo: {
-    fontWeight: "bold",
-    color: 'white',
-    fontSize: 20,
-    marginVertical: 10,
-  },
-  preco: {
-    color: 'white',
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-
-  buttonsContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    marginTop: 20,
-    width: '100%',
-  }
+  
 });
